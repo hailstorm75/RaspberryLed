@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+service LEDService {
+  rpc IsAlive (Void) returns (Success) {}
+  rpc SetColor (Color) returns (Success) {}
+}
+
+message Void {}
+
+message Color {
+  int32 R = 1;
+  int32 G = 2;
+  int32 B = 3;
+}
+
+message Success {
+  bool result = 1;
+}
